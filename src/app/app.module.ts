@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent } from './components/app.component';
+import { AppComponent } from './components/main/app.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { UsersListComponent } from './components/users/users-list/users-list.component';
 import { HomeComponent } from './components/home/home.component';
+import { PostAddComponent } from './components/posts/post-add/post-add.component';
+import { UsersAddComponent } from './components/users/users-add/users-add.component';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,14 @@ import { HomeComponent } from './components/home/home.component';
     TopbarComponent,
     PostListComponent,
     UsersListComponent,
-    HomeComponent
+    HomeComponent,
+    PostAddComponent,
+    UsersAddComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

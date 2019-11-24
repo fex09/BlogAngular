@@ -6,17 +6,18 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
-  @Input() sectionInput: string;
-  @Output() sectionInputChange = new EventEmitter<string>();
+  @Input() section: string;
+  @Output() sectionChange = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   setSection(sectionName: string): void {
-    this.sectionInput = sectionName;
-    this.sectionInputChange.emit(sectionName);
+    this.section = sectionName;
+    this.sectionChange.emit(sectionName);
   }
 
 }

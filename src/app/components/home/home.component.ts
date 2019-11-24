@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+// component
+import { AppComponent } from '../main/app.component';
+
+
 @Component ({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public myapp: AppComponent) { }
 
   ngOnInit() {
+  }
+
+  setSection(sectionName: string): void {
+    this.myapp.pageSection = sectionName;
   }
 
 }

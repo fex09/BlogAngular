@@ -1,0 +1,57 @@
+<h1 class="border-bottom p-2 mb-3">Add New Post</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <form #addPostForm="ngForm">
+      <div class="form-group">
+        <label for="id" class="col-form-label">Id Post</label>
+        <input #id="ngModel" class="form-control" name="id" [(ngModel)]="post.Id" type="number" required minlength="1"
+          [ngClass]="{'is-invalid': addPostForm.submitted && id.invalid }" />
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="id.hasError('required')">Required field</div>
+        <div *ngIf="id.hasError('minlength')">Valores mayor a 0</div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-form-label">Title</label>
+        <input #title="ngModel" [(ngModel)]="post.title" class="form-control" type="text" required maxlength="100"
+          name="title" [ngClass]="{'is-invalid': addPostForm.submitted && title.invalid }" />
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="title.hasError('required')">Required field</div>
+        <div *ngIf="title.hasError('maxlength')">Length 100</div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-form-label">Description</label>
+        <textarea #description="ngModel" class="form-control" type="text" required maxlength="5000"
+          [ngClass]="{'is-invalid': addPostForm.submitted && description.invalid }"
+          [(ngModel)]="post.description"></textarea>
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="description.hasError('required')">Required field</div>
+        <div *ngIf="description.hasError('maxlength')">Length 5000</div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-form-label">Image</label>
+        <input #image="ngModel" class="form-control" type="text" required maxlength="200"
+          [ngClass]="{'is-invalid': addPostForm.submitted && image.invalid }" [(ngModel)]="post.image" />
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="image.hasError('required')">Required field</div>
+        <div *ngIf="image.hasError('maxlength')">Length 200</div>
+      </div>
+      <div class="form-group">
+        <label for="" class="col-form-label">Created At</label>
+        <input #createdAt="ngModel" class="form-control" type="date" required
+          [ngClass]="{'is-invalid': addPostForm.submitted && createdAt.invalid }" [(ngModel)]="post.createdAt" />
+      </div>
+      <div class="invalid-feedback">
+        <div *ngIf="createdAt.hasError('required')">Required field</div>
+      </div>
+      <div class="form-group">
+          <button class="btn btn-primary" type="submit" [disabled]="!addProductForm.valid"
+            (click)="savePost(addPostForm)">Save</button>
+        </div>
+    </form>
+  </div>
+</div>
