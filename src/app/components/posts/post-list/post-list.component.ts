@@ -3,7 +3,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PostsService } from 'src/app/services/posts/posts.service';
 // models
 import { Post } from 'src/app/models/post';
-//import { AppComponent } from '../../main/app.component';
+// components
+import { AppComponent } from '../../main/app.component';
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -12,11 +13,11 @@ import { Post } from 'src/app/models/post';
 export class PostListComponent implements OnInit {
   posts: Post[];
 
-  @Output() public onEditPost = new EventEmitter();
+  // @Output() public onEditPost = new EventEmitter();
 
   constructor(
-    private postsService: PostsService
-    //private myapp: AppComponent
+    private postsService: PostsService,
+    private myapp: AppComponent
   ) {
     this.posts = postsService.getList();
   }
@@ -25,9 +26,9 @@ export class PostListComponent implements OnInit {
   }
 
   public editPost(id: number): void {
-    alert(id);
-    this.onEditPost.emit(id);
-    //this.myapp.pageSection = 'editpost';
+    // this.onEditPost.emit(id);
+    this.myapp.pageSection = 'editpost';
+    this.postsService.viewSelectedPost(id);
   }
 
   public deletePost(id: number): void {

@@ -7,6 +7,5 @@
   <app-users-list *ngIf="pageSection == 'users'"></app-users-list>
   <app-post-add *ngIf="pageSection == 'addpost'"></app-post-add>
   <app-post-edit *ngIf="pageSection == 'editpost'"
-  (onEditPost)="seleccionado = $event"
-  [postInput] = "postSelected"></app-post-edit>
+  (onEditPost)="seleccionado = $event"></app-post-edit>
 </div>

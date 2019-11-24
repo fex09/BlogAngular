@@ -1,22 +1,9 @@
-import {
-  Component,
-  OnInit,
-  Input
-} from '@angular/core';
-import {
-  NgForm
-} from '@angular/forms';
-
+import { Component, OnInit, } from '@angular/core';
+import { NgForm } from '@angular/forms';
 // models
-import {
-  Post
-} from 'src/app/models/post';
-import {
-  AppComponent
-} from '../../main/app.component';
-import {
-  PostsService
-} from 'src/app/services/posts/posts.service';
+import { Post } from 'src/app/models/post';
+import { AppComponent } from '../../main/app.component';
+import { PostsService } from 'src/app/services/posts/posts.service';
 
 @Component({
   selector: 'app-post-add',

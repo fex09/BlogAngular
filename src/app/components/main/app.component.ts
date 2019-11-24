@@ -20,7 +20,6 @@ export class AppComponent {
   }
 
   public viewEditDetails(id: number): void {
-    alert('llamado');
     this.postSelected = this.posts.find((p: Post) => {
       return p.id === id;
     });

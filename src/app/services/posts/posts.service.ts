@@ -55,8 +55,8 @@ export class PostsService {
     });
   }
 
-  public viewEditPost(id: number): Post {
-    return this.selectedPost = this.posts.find((post: Post) => {
+  public viewSelectedPost(id: number): void {
+    this.selectedPost = this.posts.find((post: Post) => {
       return post.id === id;
     });
   }
