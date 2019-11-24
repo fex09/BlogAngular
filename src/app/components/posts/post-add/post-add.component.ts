@@ -16,7 +16,7 @@ export class PostAddComponent implements OnInit {
 
   constructor(
     private myapp: AppComponent,
-    private postsService: PostsService,
+    private postsService: PostsService
   ) {
     this.post = new Post();
   }

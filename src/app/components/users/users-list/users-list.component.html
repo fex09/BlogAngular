@@ -1,6 +1,6 @@
 <h1 class="border-bottom p-2 mb-3">Users</h1>
 
-<button class="btn btn-link">Add User</button>
+<button class="btn btn-link" (click)="myapp.pageSection = 'adduser'">Add User</button>
 
 <table class="table table-bordered table-striped">
   <thead class="thead-light">
@@ -11,6 +11,21 @@
       <th> Email </th>
       <th> Gender </th>
       <th> Birthday </th>
+      <th class="text-center"> Actions </th>
     </tr>
   </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.firstname}}</td>
+      <td>{{user.lastname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.birthdate | date}}</td>
+      <td class="text-center">
+        <button class="btn btn-info m-1" (click)="editUser(user.id)" >Edit User</button>
+        <button class="btn btn-danger m-1" (click)="deleteUser(user.id)" >Delete User</button>
+      </td>
+    </tr>
+  </tbody>
 </table>

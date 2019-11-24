@@ -37,7 +37,6 @@ export class PostListComponent implements OnInit {
   }
 
   public emitirSeccion(seccion: string): void {
-    alert(seccion);
     this.setsectionOutput.emit(seccion);
   }
 
