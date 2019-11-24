@@ -2,18 +2,18 @@
 
 <div class="row">
   <div class="col-md-6">
-    <form #addPostForm="ngForm" name="addPostForm">
+    <form #addPostForm="ngForm">
       <div class="form-group">
         <label>Id Post</label>
-        <input #id="ngModel" class="form-control" name="id" [(ngModel)]="post.id" type="number" required minlength="1"
-          [ngClass]="{'is-invalid': id.dirty && id.invalid }"  />
+        <input #Id="ngModel" class="form-control" name="Id" [(ngModel)]="post.id" type="number" required minlength="1"
+          [ngClass]="{'is-invalid': addPostForm.submitted && Id.invalid }" />
       </div>
       <div class="invalid-feedback">
-        <div *ngIf="id.hasError('required')">Required field</div>
-        <div *ngIf="id.hasError('minlength')">Valores mayor a 0</div>
+        <div *ngIf="Id.hasError('required')">Required field</div>
+        <div *ngIf="Id.hasError('minlength')">Valores mayor a 0</div>
       </div>
       <div class="form-group">
-        <label >Title</label>
+        <label>Title</label>
         <input #title="ngModel" [(ngModel)]="post.title" class="form-control" type="text" required maxlength="100"
           name="title" [ngClass]="{'is-invalid': addPostForm.submitted && title.invalid }" />
       </div>
@@ -49,9 +49,10 @@
         <div *ngIf="createdAt.hasError('required')">Required field</div>
       </div>
       <div class="form-group">
-          <button class="btn btn-primary" type="submit" [disabled]="!addPostForm.valid"
-            (click)="savePost(addPostForm)">Save</button>
-        </div>
+        <button class="btn btn-primary" type="submit"
+          (click)="savePost(addPostForm)">Save</button>
+        <button class="btn btn-dark m-2" type="button" (click)="back()">Cancel</button>
+      </div>
     </form>
   </div>
 </div>

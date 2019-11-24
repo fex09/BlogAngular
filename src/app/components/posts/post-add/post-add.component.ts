@@ -25,10 +25,13 @@ export class PostAddComponent implements OnInit {
 
   public savePost(form: NgForm): void {
     if (form.invalid) {
-      alert('Formulario inválido!');
       return;
     }
     this.postsService.addPost(this.post);
+    this.back();
+  }
+
+  public back(): void {
     this.myapp.pageSection = 'posts';
   }
 }

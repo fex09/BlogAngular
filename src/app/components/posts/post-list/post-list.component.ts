@@ -13,7 +13,7 @@ import { AppComponent } from '../../main/app.component';
 export class PostListComponent implements OnInit {
   posts: Post[];
 
-  // @Output() public onEditPost = new EventEmitter();
+  @Output() public setsectionOutput = new EventEmitter<string>();
 
   constructor(
     private postsService: PostsService,
@@ -33,6 +33,12 @@ export class PostListComponent implements OnInit {
 
   public deletePost(id: number): void {
     this.postsService.deletePost(id);
+    this.posts = this.postsService.getList();
+  }
+
+  public emitirSeccion(seccion: string): void {
+    alert(seccion);
+    this.setsectionOutput.emit(seccion);
   }
 
 

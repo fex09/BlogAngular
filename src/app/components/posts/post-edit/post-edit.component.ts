@@ -28,6 +28,10 @@ export class PostEditComponent implements OnInit {
       return;
     }
     this.postService.editPost(this.postInput);
+    this.back();
+  }
+
+  public back(): void {
     this.myapp.pageSection = 'posts';
   }
 

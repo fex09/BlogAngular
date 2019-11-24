@@ -49,8 +49,8 @@ export class PostsService {
     postedit.createdAt = pPost.createdAt;
   }
 
-  public deletePost(pId: number): Post[] {
-    return this.posts.filter((post: Post) => {
+  public deletePost(pId: number): void {
+    this.posts = this.posts.filter((post: Post) => {
       return post.id !== pId;
     });
   }
