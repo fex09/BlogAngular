@@ -1,8 +1,12 @@
 <app-topbar [(section)]="pageSection"></app-topbar>
 <!-- Main Container -->
 <div class="container">
+  <label for="">{{seleccionado}}</label>
   <app-home *ngIf="pageSection == 'home'"></app-home>
   <app-post-list *ngIf="pageSection == 'posts'"></app-post-list>
   <app-users-list *ngIf="pageSection == 'users'"></app-users-list>
   <app-post-add *ngIf="pageSection == 'addpost'"></app-post-add>
+  <app-post-edit *ngIf="pageSection == 'editpost'"
+  (onEditPost)="seleccionado = $event"
+  [postInput] = "postSelected"></app-post-edit>
 </div>

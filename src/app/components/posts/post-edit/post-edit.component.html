@@ -1,21 +1,16 @@
-<h1 class="border-bottom p-2 mb-3">Add New Post</h1>
+<h1 class="border-bottom p-2 mb-3">Edit New postInput</h1>
 
 <div class="row">
   <div class="col-md-6">
-    <form #addPostForm="ngForm" name="addPostForm">
+    <form #editPostForm="ngForm" name="editPostForm">
       <div class="form-group">
         <label>Id Post</label>
-        <input #id="ngModel" class="form-control" name="id" [(ngModel)]="post.id" type="number" required minlength="1"
-          [ngClass]="{'is-invalid': id.dirty && id.invalid }"  />
-      </div>
-      <div class="invalid-feedback">
-        <div *ngIf="id.hasError('required')">Required field</div>
-        <div *ngIf="id.hasError('minlength')">Valores mayor a 0</div>
+        <input class="form-control" name="id" [(ngModel)]="postInput.id" type="number" disabled="disabled" />
       </div>
       <div class="form-group">
         <label >Title</label>
-        <input #title="ngModel" [(ngModel)]="post.title" class="form-control" type="text" required maxlength="100"
-          name="title" [ngClass]="{'is-invalid': addPostForm.submitted && title.invalid }" />
+        <input #title="ngModel" [(ngModel)]="postInput.title" class="form-control" type="text" required maxlength="100"
+          name="title" [ngClass]="{'is-invalid': editPostForm.submitted && title.invalid }" />
       </div>
       <div class="invalid-feedback">
         <div *ngIf="title.hasError('required')">Required field</div>
@@ -24,8 +19,8 @@
       <div class="form-group">
         <label>Description</label>
         <textarea #description="ngModel" name="description" class="form-control" type="text" required maxlength="5000"
-          [ngClass]="{'is-invalid': addPostForm.submitted && description.invalid }"
-          [(ngModel)]="post.description"></textarea>
+          [ngClass]="{'is-invalid': editPostForm.submitted && description.invalid }"
+          [(ngModel)]="postInput.description"></textarea>
       </div>
       <div class="invalid-feedback">
         <div *ngIf="description.hasError('required')">Required field</div>
@@ -34,7 +29,7 @@
       <div class="form-group">
         <label>Image</label>
         <input #image="ngModel" class="form-control" type="text" required maxlength="200" name="image"
-          [ngClass]="{'is-invalid': addPostForm.submitted && image.invalid }" [(ngModel)]="post.image" />
+          [ngClass]="{'is-invalid': editPostForm.submitted && image.invalid }" [(ngModel)]="postInput.image" />
       </div>
       <div class="invalid-feedback">
         <div *ngIf="image.hasError('required')">Required field</div>
@@ -43,15 +38,16 @@
       <div class="form-group">
         <label>Created At</label>
         <input #createdAt="ngModel" class="form-control" type="date" required name="createdAt"
-          [ngClass]="{'is-invalid': addPostForm.submitted && createdAt.invalid }" [(ngModel)]="post.createdAt" />
+          [ngClass]="{'is-invalid': editPostForm.submitted && createdAt.invalid }" [(ngModel)]="postInput.createdAt" />
       </div>
       <div class="invalid-feedback">
         <div *ngIf="createdAt.hasError('required')">Required field</div>
       </div>
       <div class="form-group">
-          <button class="btn btn-primary" type="submit" [disabled]="!addPostForm.valid"
-            (click)="savePost(addPostForm)">Save</button>
+          <button class="btn btn-primary" type="submit" [disabled]="!editPostForm.valid"
+            (click)="savePost(editPostForm)">Update</button>
         </div>
     </form>
   </div>
 </div>
+

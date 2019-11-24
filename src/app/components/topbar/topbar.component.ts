@@ -6,8 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
-  @Input() section: string;
-  @Output() sectionChange = new EventEmitter<string>();
+  @Input() public section: string;
+  @Output() public sectionChange = new EventEmitter<string>();
 
   constructor() {
   }

@@ -10,8 +10,9 @@ import { AppComponent } from '../main/app.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(public myapp: AppComponent) { }
+  seleccionado: string;
+  constructor(public myapp: AppComponent) {
+  }
 
   ngOnInit() {
   }
