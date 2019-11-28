@@ -14,6 +14,7 @@ import { PostEditComponent } from './components/posts/post-edit/post-edit.compon
 import { UsersEditComponent } from './components/users/users-edit/users-edit.component';
 import { PhotosListComponent } from './components/photos/photos-list/photos-list.component';
 import { PhotosAddComponent } from './components/photos/photos-add/photos-add.component';
+import { AlbumListComponent } from './components/album-list/album-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PhotosAddComponent } from './components/photos/photos-add/photos-add.co
     PostEditComponent,
     UsersEditComponent,
     PhotosListComponent,
-    PhotosAddComponent
+    PhotosAddComponent,
+    AlbumListComponent
   ],
   imports: [
     BrowserModule,

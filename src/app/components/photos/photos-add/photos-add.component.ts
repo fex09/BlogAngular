@@ -1,4 +1,4 @@
-import { PhotosService } from 'src/app/services/photos.service';
+import { PhotosService } from 'src/app/services/photos/photos.service';
 import { NgForm } from '@angular/forms';
 import { Photo } from './../../../models/photo';
 import { Component, OnInit } from '@angular/core';
@@ -32,7 +32,7 @@ export class PhotosAddComponent implements OnInit {
       err => {
         alert('Error con el servicio de fotos!!');
       }
-    )
+    );
 
   }
 
