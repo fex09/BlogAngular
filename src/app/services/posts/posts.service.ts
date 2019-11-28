@@ -53,6 +53,7 @@ export class PostsService {
     this.posts = this.posts.filter((post: Post) => {
       return post.id !== pId;
     });
+    // buscar como se utiliza método splice de los arreglos para eliminar.
   }
 
   public viewSelectedPost(id: number): void {
