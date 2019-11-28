@@ -22,10 +22,10 @@ export class PhotosService {
   }
 
   public update(photo: Photo): Observable<Photo> {
-    return this.http.put(this.endpoint + '/photos', photo) as Observable<Photo>;
+    return this.http.put(this.endpoint + '/photos/' + photo.id, photo) as Observable<Photo>;
   }
 
-  public delete(photo: Photo): Observable<Photo> {
-    return this.http.delete(this.endpoint + '/photos') as Observable<Photo>;
+  public delete(id: number): Observable<Photo> {
+    return this.http.delete(this.endpoint + '/photos/' + id) as Observable<Photo>;
   }
 }

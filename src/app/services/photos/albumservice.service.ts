@@ -17,16 +17,16 @@ export class AlbumserviceService {
     return this.http.get(this.endpoint + '/albums');
   }
 
-  public add(photo: Album): Observable<Album> {
-    return this.http.post(this.endpoint + '/albums', photo) as Observable<Album>;
+  public add(album: Album): Observable<Album> {
+    return this.http.post(this.endpoint + '/albums', album) as Observable<Album>;
   }
 
-  public update(photo: Album): Observable<Album> {
-    return this.http.put(this.endpoint + '/albums', photo) as Observable<Album>;
+  public update(album: Album): Observable<Album> {
+    return this.http.put(this.endpoint + '/albums/' + album.id, album) as Observable<Album>;
   }
 
-  public delete(photo: Album): Observable<Album> {
-    return this.http.delete(this.endpoint + '/albums') as Observable<Album>;
+  public delete(id: number): Observable<Album> {
+    return this.http.delete(this.endpoint + '/albums/' + id) as Observable<Album>;
   }
 
 

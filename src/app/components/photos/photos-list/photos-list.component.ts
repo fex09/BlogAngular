@@ -28,6 +28,36 @@ export class PhotosListComponent implements OnInit {
     );
   }
 
+  deletePhoto(id: number): void {
+    this.photosService.delete(id).subscribe(
+      data => {
+        alert('Se eliminó la foto');
+      },
+      err => {
+        alert('Error!!!');
+      }
+    );
+  }
 
+  editPhoto(photo: Photo): void {
+    this.photosService.update(photo).subscribe(
+      data => {
+        alert('Se actualizó la foto');
+      },
+      err => {
+        alert('Error!!!');
+      }
+    );
+  }
 
+  addPhoto(photo: Photo): void {
+    this.photosService.add(photo).subscribe(
+      data => {
+        alert('Se Insertó la foto');
+      },
+      err => {
+        alert('Error!!!');
+      }
+    );
+  }
 }
